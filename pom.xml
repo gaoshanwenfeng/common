@@ -10,6 +10,7 @@
   <modules>
     <module>common-util</module>
     <module>mybatis-gen</module>
+    <module>mybatis-gen</module>
   </modules>
   <packaging>pom</packaging>
 

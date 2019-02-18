@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-util" />
-        <module name="mybaits-gen" />
+        <module name="mybatis-gen" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="common-util" target="1.7" />
       <module name="mybaits-gen" target="1.8" />
+      <module name="mybatis-gen" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
