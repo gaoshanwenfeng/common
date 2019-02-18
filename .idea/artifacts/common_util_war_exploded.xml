@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="common-util:war exploded">
+    <output-path>$PROJECT_DIR$/common-util/target/common-util</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>common-util</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="common-util" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/common-util/target/common-util/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="common-util/web/Web" />
+    </root>
+  </artifact>
+</component>

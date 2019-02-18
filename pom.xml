@@ -9,6 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <modules>
     <module>common-util</module>
+    <module>mybatis-gen</module>
   </modules>
   <packaging>pom</packaging>
 

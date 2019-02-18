@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Mon Aug 20 17:02:06 CST 2012-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mfw.traffic.train.mapper.marketing.TrainGrabSpeedupAssocMapper">
+
+    <resultMap id="trainGrabSpeedupAssocResultMap" type="com.mfw.traffic.train.po.marketing.TrainGrabSpeedupAssocPO">
+        <result property="id" column="id"/>
+        <result property="uid" column="uid"/>
+        <result property="orderId" column="order_id"/>
+        <result property="svipPackageCount" column="svip_package_count"/>
+        <result property="averagePackageCount" column="average_package_count"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="ctime" column="ctime"/>
+        <result property="mtime" column="mtime"/>
+        <result property="version" column="version"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+        <trim suffixOverrides=",">
+        id,
+        uid,
+        order_id,
+        svip_package_count,
+        average_package_count,
+        order_status,
+        ctime,
+        mtime,
+        version,
+        </trim>
+    </sql>
+
+    <sql id="Base_Where">
+       <if test="id !=null">and id = #{id}</if>
+       <if test="uid !=null and uid!=''">and uid = #{uid}</if>
+       <if test="orderId !=null and orderId!=''">and order_id = #{orderId}</if>
+       <if test="svipPackageCount !=null">and svip_package_count = #{svipPackageCount}</if>
+       <if test="averagePackageCount !=null">and average_package_count = #{averagePackageCount}</if>
+       <if test="orderStatus !=null">and order_status = #{orderStatus}</if>
+       <if test="ctime !=null">and ctime = #{ctime}</if>
+       <if test="mtime !=null">and mtime = #{mtime}</if>
+       <if test="version !=null">and version = #{version}</if>
+    </sql>
+
+    <select id="queryListByWhere" parameterType="java.util.Map" resultMap="trainGrabSpeedupAssocResultMap">
+        SELECT
+        <include refid="Base_Column_List"></include>
+        FROM train_grab_speedup_assoc
+        <where>
+            <trim prefixOverrides="and">
+            <include refid="Base_Where"></include>
+            </trim>
+        </where>
+    </select>
+
+    <insert id="addEntity" parameterType="com.mfw.traffic.train.po.marketing.TrainGrabSpeedupAssocPO">
+        insert into train_grab_speedup_assoc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">uid,</if>
+            <if test="orderId != null">order_id,</if>
+            <if test="svipPackageCount != null">svip_package_count,</if>
+            <if test="averagePackageCount != null">average_package_count,</if>
+            <if test="orderStatus != null">order_status,</if>
+            <if test="ctime != null">ctime,</if>
+            <if test="mtime != null">mtime,</if>
+            <if test="version != null">version,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid},</if>
+            <if test="orderId != null">#{orderId},</if>
+            <if test="svipPackageCount != null">#{svipPackageCount},</if>
+            <if test="averagePackageCount != null">#{averagePackageCount},</if>
+            <if test="orderStatus != null">#{orderStatus},</if>
+            <if test="ctime != null">#{ctime},</if>
+            <if test="mtime != null">#{mtime},</if>
+            <if test="version != null">#{version},</if>
+        </trim>
+    </insert>
+
+
+    <update id="updateEntity" parameterType="com.mfw.traffic.train.po.marketing.TrainGrabSpeedupAssocPO">
+        update train_grab_speedup_assoc
+        <set>
+            <if test="uid != null">uid=#{uid},</if>
+            <if test="orderId != null">order_id=#{orderId},</if>
+            <if test="svipPackageCount != null">svip_package_count=#{svipPackageCount},</if>
+            <if test="averagePackageCount != null">average_package_count=#{averagePackageCount},</if>
+            <if test="orderStatus != null">order_status=#{orderStatus},</if>
+            <if test="ctime != null">ctime=#{ctime},</if>
+            <if test="mtime != null">mtime=#{mtime},</if>
+            <if test="version != null">version=#{version},</if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+</mapper>
+
